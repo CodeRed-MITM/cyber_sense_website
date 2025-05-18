@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-x: hidden;
+    scrollbar-width: none;
+  }
+}
+
 /* Custom Register Button Glow */
 .register-button {
   background: linear-gradient(

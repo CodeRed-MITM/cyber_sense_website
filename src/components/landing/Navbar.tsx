@@ -139,39 +139,43 @@ const Navbar = () => {
           Cyber Sense
         </div>
         <TooltipProvider delayDuration={100}>
-          <ul className="flex space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4">
-            {navItemsData.map((item) => (
-              <li key={item.label}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link
-                      href={item.href}
-                      onClick={(e) => {
-                         if (item.href === '#') {
-                           e.preventDefault(); 
-                           window.scrollTo({ top: 0, behavior: 'smooth' });
-                           if (window.location.hash) {
-                             window.history.pushState("", document.title, window.location.pathname + window.location.search);
+          <div className="relative flex-1 ml-4">
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            <ul className="flex space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 overflow-x-auto no-scrollbar pl-2 pr-2">
+              {navItemsData.map((item) => (
+                <li key={item.label}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href={item.href}
+                        onClick={(e) => {
+                           if (item.href === '#') {
+                             e.preventDefault(); 
+                             window.scrollTo({ top: 0, behavior: 'smooth' });
+                             if (window.location.hash) {
+                               window.history.pushState("", document.title, window.location.pathname + window.location.search);
+                             }
+                             setActiveId(''); 
                            }
-                           setActiveId(''); 
-                         }
-                      }}
-                      className={cn(
-                        "p-2 sm:p-3 rounded-lg transition-all duration-200 ease-in-out flex items-center text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                        activeId === item.id ? "text-primary bg-primary/20 scale-110 shadow-lg" : "hover:scale-105 sm:hover:scale-110"
-                      )}
-                      aria-label={item.label}
-                    >
-                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom">
-                    <p>{item.label}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </li>
-            ))}
-          </ul>
+                        }}
+                        className={cn(
+                          "p-2 sm:p-3 rounded-lg transition-all duration-200 ease-in-out flex items-center text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                          activeId === item.id ? "text-primary bg-primary/20 scale-110 shadow-lg" : "hover:scale-105 sm:hover:scale-110"
+                        )}
+                        aria-label={item.label}
+                      >
+                        <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">
+                      <p>{item.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </li>
+              ))}
+            </ul>
+          </div>
         </TooltipProvider>
       </div>
     </nav>
