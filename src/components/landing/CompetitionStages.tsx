@@ -22,17 +22,14 @@ const CompetitionStages: FC<CompetitionStagesProps> = ({ stages }) => {
         Competition Stages
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
-        {stages.map((stage, index) => {
+        {stages.map((stage) => {
           const IconComponent = LucideIcons[stage.iconName] as LucideIcons.LucideIcon | undefined;
-          // Check if this is the 5th stage and there are exactly 5 stages in total
-          const isFifthAndLastOfFive = index === 4 && stages.length === 5;
-
+          
           return (
             <Card 
               key={stage.id} 
               className={cn(
-                "bg-card shadow-xl hover:shadow-primary/40 transition-all duration-300 rounded-xl flex flex-col transform hover:-translate-y-1 sm:hover:-translate-y-2",
-                isFifthAndLastOfFive && "sm:col-span-full sm:justify-self-center lg:col-span-auto lg:justify-self-auto"
+                "bg-card shadow-xl hover:shadow-primary/40 transition-all duration-300 rounded-xl flex flex-col transform hover:-translate-y-1 sm:hover:-translate-y-2"
               )}
             >
               <CardHeader className="items-center text-center pt-6 sm:pt-8">
