@@ -1,3 +1,4 @@
+
 import Header from '@/components/landing/Header';
 import VenueMap from '@/components/landing/VenueMap';
 import CompetitionStages from '@/components/landing/CompetitionStages';
@@ -17,31 +18,31 @@ export default function CyberSenseLandingPage() {
   const competitionStagesData: StageInfo[] = [
     { 
       id: 's1', 
-      title: "Cipher Breach", // Renamed from "Half and Half" for more cyber feel
+      title: "Half and Half",
       description: "Decrypt fragmented intel and piece together critical data from partially revealed clues. Precision is key.", 
-      iconName: "Puzzle" // Changed icon
+      iconName: "Puzzle"
     },
     { 
       id: 's2', 
-      title: "Brand Deception", // Renamed from "Logo Recall"
+      title: "Logo Recall",
       description: "Identify sophisticatedly altered corporate logos and digital watermarks in a high-stakes visual challenge.", 
-      iconName: "ScanEye" // Changed icon
+      iconName: "ScanEye"
     },
     { 
       id: 's3', 
-      title: "Phishing Net", // Renamed from "Phishing Hunt"
+      title: "Phishing Hunt",
       description: "Navigate a gauntlet of deceptive emails and websites. Distinguish friend from foe to avoid the hook.", 
       iconName: "ShieldAlert" 
     },
     { 
       id: 's4', 
-      title: "Digital Forensics", // Renamed from "Murder Mystery"
+      title: "Murder Mystery",
       description: "Unravel a complex cybercrime. Analyze digital evidence, trace attack vectors, and identify the culprit.", 
       iconName: "FileSearch" 
     },
     { 
       id: 's5', 
-      title: "Byte Blitz", // Renamed from "Rapid Fire"
+      title: "Rapid Fire",
       description: "A fast-paced Q&A on diverse cybersecurity topics. Speed and accuracy will determine the victor.", 
       iconName: "Zap" 
     },
