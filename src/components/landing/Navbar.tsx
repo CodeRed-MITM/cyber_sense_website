@@ -29,6 +29,7 @@ const Navbar = () => {
   const [isClient, setIsClient] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sectionRefs = useRef<Map<string, HTMLElement | null>>(new Map());
+  const navListRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -113,6 +114,30 @@ const Navbar = () => {
     };
   }, [isClient]); 
 
+  // Add effect for auto-scrolling navbar
+  useEffect(() => {
+    if (!isClient || !navListRef.current) return;
+
+    const scrollActiveItemIntoView = () => {
+      const activeItem = navListRef.current?.querySelector(`[data-section-id="${activeId}"]`);
+      if (activeItem) {
+        const navList = navListRef.current;
+        const itemRect = activeItem.getBoundingClientRect();
+        const navRect = navList.getBoundingClientRect();
+
+        // Check if the active item is outside the visible area
+        if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+          navList.scrollTo({
+            left: activeItem.offsetLeft - navRect.width / 2 + itemRect.width / 2,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    scrollActiveItemIntoView();
+  }, [activeId, isClient]);
+
   if (!isClient) { 
     return (
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 via-black/50 to-transparent backdrop-blur-sm">
@@ -135,29 +160,29 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 via-black/50 to-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="text-xl sm:text-2xl font-press-start-2p text-primary uppercase tracking-wider">
+        <div className="text-xl sm:text-2xl font-press-start-2p text-primary uppercase tracking-wider shrink-0">
           Cyber Sense
         </div>
         <TooltipProvider delayDuration={100}>
-          <div className="relative flex-1 ml-4">
+          <div className="relative w-auto ml-8">
             <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-            <ul className="flex space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 overflow-x-auto no-scrollbar pl-2 pr-2">
+            <ul ref={navListRef} className="flex items-center justify-end space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 overflow-x-auto no-scrollbar pl-2 pr-2 touch-pan-x">
               {navItemsData.map((item) => (
-                <li key={item.label}>
+                <li key={item.label} data-section-id={item.id}>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Link
                         href={item.href}
                         onClick={(e) => {
-                           if (item.href === '#') {
-                             e.preventDefault(); 
-                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                             if (window.location.hash) {
-                               window.history.pushState("", document.title, window.location.pathname + window.location.search);
-                             }
-                             setActiveId(''); 
-                           }
+                          if (item.href === '#') {
+                            e.preventDefault(); 
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            if (window.location.hash) {
+                              window.history.pushState("", document.title, window.location.pathname + window.location.search);
+                            }
+                            setActiveId(''); 
+                          }
                         }}
                         className={cn(
                           "p-2 sm:p-3 rounded-lg transition-all duration-200 ease-in-out flex items-center text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
