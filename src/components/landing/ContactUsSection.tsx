@@ -12,12 +12,12 @@ interface Coordinator {
 const coordinators: Coordinator[] = [
   {
     name: "Punith Kumar",
-    phone: "+91 XXXXX XXXXX", 
+    phone: "+91 8861608621", 
     email: "punith.k@example.com" 
   },
   {
     name: "Sneha R",
-    phone: "+91 YYYYY YYYYY", 
+    phone: "+91 9900827056", 
     email: "sneha.r@example.com" 
   },
   {
@@ -88,3 +88,4 @@ const ContactUsSection: FC = () => {
 };
 
 export default ContactUsSection;
+
