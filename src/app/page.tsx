@@ -67,7 +67,7 @@ export default function CyberSenseLandingPage() {
     },
     {
       question: "Is there a limit to team size?",
-      answer: "Yes, teams are strictly limited to 2 members to ensure fair participation and collaboration. Please check the official registration details for any updates regarding team size for this year's event."
+      answer: "Yes, teams are strictly limited to 2 members to ensure fair participation and collaboration."
     },
     {
       question: "Will there be mentors or guidance available?",
@@ -75,7 +75,7 @@ export default function CyberSenseLandingPage() {
     },
     {
       question: "Will food and refreshments be provided?",
-      answer: "We aim to keep our participants energized! Lunch and light refreshments, along with water, are typically available. Please check the final event schedule and announcements for specific details on food and beverage provisions."
+      answer: "Lunch will be provided."
     }
   ];
 
