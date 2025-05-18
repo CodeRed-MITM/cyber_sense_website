@@ -1,7 +1,7 @@
 
 import type { FC } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { User, Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react'; // Removed User from here
 
 interface Coordinator {
   name: string;
@@ -58,14 +58,12 @@ const ContactUsSection: FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
         {coordinators.map((coordinator, index) => (
           <Card key={index} className="bg-card shadow-lg hover:shadow-primary/30 transition-shadow duration-300 rounded-xl flex flex-col">
-            <CardHeader className="pb-4 items-center text-center"> {/* Added items-center and text-center */}
-              <div className="flex items-center space-x-3 mb-3">
-                <User className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
-                <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground">{coordinator.name}</CardTitle>
-              </div>
-              <p className="text-sm text-muted-foreground">{coordinator.title}</p> {/* Removed ml classes */}
+            <CardHeader className="pb-4 items-center text-center">
+              {/* Removed the User icon and its container div */}
+              <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground mb-1">{coordinator.name}</CardTitle>
+              <p className="text-sm text-muted-foreground">{coordinator.title}</p>
             </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 pt-0 flex-grow px-6"> {/* Added px-6 for consistency if content gets centered too */}
+            <CardContent className="space-y-3 sm:space-y-4 pt-0 flex-grow px-6">
               {coordinator.phone && (
                 <div className="flex items-center text-sm sm:text-base text-muted-foreground justify-center sm:justify-start">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-accent flex-shrink-0" />
@@ -83,7 +81,7 @@ const ContactUsSection: FC = () => {
                 </div>
               )}
               {!coordinator.phone && !coordinator.email && (
-                 <div className="flex items-center text-sm sm:text-base text-muted-foreground/70 italic h-10"> {/* Added h-10 to maintain some height for cards without contact */}
+                 <div className="flex items-center text-sm sm:text-base text-muted-foreground/70 italic h-10 justify-center"> {/* Added justify-center for consistency */}
                    {/* Intentionally empty or add a generic message if needed */}
                  </div>
               )}
