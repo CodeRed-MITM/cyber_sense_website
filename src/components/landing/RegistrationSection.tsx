@@ -14,7 +14,7 @@ const RegistrationSection: FC<RegistrationSectionProps> = ({ registrationLink })
       <div className="container mx-auto px-4">
         <Ticket className="w-12 h-12 sm:w-14 md:w-16 md:h-16 text-primary mx-auto mb-4 sm:mb-6" />
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-orbitron font-bold mb-4 sm:mb-6" style={{ color: 'hsl(var(--primary))' }}>
-          Secure Your Spot!
+          Register Now to Secure Your Spot!
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
           The digital arena awaits. Secure your place at Cyber Sense, showcase your expertise, and battle for supremacy and exciting rewards. Spots are limited!
