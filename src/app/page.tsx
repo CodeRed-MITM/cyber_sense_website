@@ -52,7 +52,7 @@ export default function CyberSenseLandingPage() {
   const venueDetails = {
     collegeName: "Maharaja Institute of Technology, Mysore",
     address: "Belawadi, Mandya District, Mysore, Karnataka 571477", 
-    coordinates: { lat: 12.3599, lng: 76.6150 } // Approximate coordinates for MIT Mysore
+    coordinates: { lat: 12.3664375, lng: 76.6888125 } // Updated coordinates for 9M8Q+HG Srirangapatna, Karnataka
   };
 
   return (
