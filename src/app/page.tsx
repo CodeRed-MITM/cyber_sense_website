@@ -4,6 +4,7 @@ import VenueMap from '@/components/landing/VenueMap';
 import CompetitionStages from '@/components/landing/CompetitionStages';
 import type { StageInfo } from '@/components/landing/CompetitionStages';
 import RegistrationSection from '@/components/landing/RegistrationSection';
+import PosterSection from '@/components/landing/PosterSection';
 import ContactUsSection from '@/components/landing/ContactUsSection';
 import { Separator } from '@/components/ui/separator';
 
@@ -52,8 +53,11 @@ export default function CyberSenseLandingPage() {
   const venueDetails = {
     collegeName: "Maharaja Institute of Technology, Mysore",
     address: "Belawadi, Mandya District, Mysore, Karnataka 571477",
-    coordinates: { lat: 12.3664375, lng: 76.6888125 }
+    coordinates: { lat: 12.3664375, lng: 76.6888125 } 
   };
+
+  const posterLink = "https://drive.google.com/file/d/1G0l2_ODxJGBMwNoOhaT22Fzra2Ri6cl2/view?usp=sharing";
+
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground antialiased">
@@ -75,6 +79,8 @@ export default function CyberSenseLandingPage() {
         />
         <Separator className="my-12 md:my-16 bg-border/50" />
         <RegistrationSection registrationLink={eventDetails.registrationLink} />
+        <Separator className="my-12 md:my-16 bg-border/50" />
+        <PosterSection posterGdriveLink={posterLink} />
         <Separator className="my-12 md:my-16 bg-border/50" />
         <ContactUsSection />
       </main>
