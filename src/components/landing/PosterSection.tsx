@@ -31,7 +31,7 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
   const handleError = () => {
     // Check if we are not already displaying the placeholder due to a previous error
     if (currentImageSrc !== placeholderImageUrl && !hasError) {
-      console.error("Failed to load image from Google Drive, falling back to placeholder.");
+      // console.error("Failed to load image from Google Drive, falling back to placeholder."); // Removed this line
       setCurrentImageSrc(placeholderImageUrl);
       setHasError(true); // Set error state to true
     }
