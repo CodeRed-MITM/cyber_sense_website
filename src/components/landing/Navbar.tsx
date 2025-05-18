@@ -62,36 +62,38 @@ const Navbar = () => {
       const observerCallback = (entries: IntersectionObserverEntry[]) => {
         let currentTopSectionId: string | null = null;
 
-        // Find the highest section in navItemsData order that is currently intersecting
         for (const navItem of navItemsData) {
-          if (!navItem.id) continue; // Skip "Home" or items without an actual section ID
+          if (!navItem.id) continue; 
 
           const entry = entries.find(e => e.target.id === navItem.id);
           if (entry && entry.isIntersecting) {
             currentTopSectionId = navItem.id;
-            break; // Found the first one in DOM/navItemsData order, this is our candidate
+            break; 
           }
         }
       
-        const isScrolledToVeryTop = window.scrollY < 50; // A small threshold for being at the very top
+        const isScrolledToVeryTop = window.scrollY < 50; 
 
         if (currentTopSectionId) {
-          // A section is intersecting in our band
           setActiveId(currentTopSectionId);
         } else {
-          // No section is intersecting in our band
           if (isScrolledToVeryTop) {
-            setActiveId(''); // Set to "Home" if at the very top of the page
+            setActiveId(''); 
           }
-          // ELSE: Do nothing, activeId remains the same, preserving the last active section icon.
+          // ELSE: Do nothing, activeId remains the same
         }
       };
       
-      const rootMarginTop = `-${topActivationOffset -1}px`;
-      const rootMarginBottom = `-${window.innerHeight - topActivationOffset - activationBandHeight}px`;
+      // Calculate the numeric values for margins first
+      const numericRootMarginTop = -(topActivationOffset -1);
+      const numericRootMarginBottom = -(window.innerHeight - topActivationOffset - activationBandHeight);
+      
+      // Construct the rootMargin string using the numeric values
+      // This avoids issues like "-(-X)px" which can cause errors
+      const rootMarginString = `${numericRootMarginTop}px 0px ${numericRootMarginBottom}px 0px`;
 
       observerRef.current = new IntersectionObserver(observerCallback, {
-        rootMargin: `${rootMarginTop} 0px ${rootMarginBottom} 0px`,
+        rootMargin: rootMarginString,
         threshold: 0.01, 
       });
 
