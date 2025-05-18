@@ -64,7 +64,7 @@ const ContactUsSection: FC = () => {
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 pt-0 flex-grow px-6">
               {coordinator.phone && (
-                <div className="flex items-center text-sm sm:text-base text-muted-foreground justify-center sm:justify-start">
+                <div className="flex items-center text-sm sm:text-base text-muted-foreground justify-center">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-accent flex-shrink-0" />
                   <a href={`tel:${coordinator.phone.replace(/\s/g, '')}`} className="hover:text-accent transition-colors">
                     {coordinator.phone}
@@ -72,7 +72,7 @@ const ContactUsSection: FC = () => {
                 </div>
               )}
               {coordinator.email && (
-                <div className="flex items-center text-sm sm:text-base text-muted-foreground justify-center sm:justify-start">
+                <div className="flex items-center text-sm sm:text-base text-muted-foreground justify-center">
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-accent flex-shrink-0" />
                   <a href={`mailto:${coordinator.email}`} className="hover:text-accent transition-colors break-all">
                     {coordinator.email}
