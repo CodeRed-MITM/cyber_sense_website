@@ -33,7 +33,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundImageU
         <Button 
           asChild 
           size="lg" 
-          className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-[0_0_20px_3px_hsl(var(--accent))] transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
         >
            <Link href={registrationLink} target="_blank" rel="noopener noreferrer">
             Register Now
