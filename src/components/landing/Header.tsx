@@ -38,7 +38,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl pt-20 md:pt-24"> {/* Ensure padding-top accounts for fixed navbar height */}
         <p className="text-sm sm:text-base text-gray-400 mb-2 font-share-tech-mono uppercase tracking-wider">
-          powered by <span className="text-black">Code</span><span className="text-destructive">Red</span> Club
+          powered by <span className="text-white">Code</span><span className="text-destructive">Red</span> Club
         </p>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-nunito font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
