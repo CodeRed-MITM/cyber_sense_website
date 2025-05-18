@@ -45,6 +45,14 @@ const coordinators: Coordinator[] = [
   {
     name: "Pancham Jain",
     title: "Social Media Coordinator",
+  },
+  {
+    name: "Likin Somanna",
+    title: "Student Coordinator",
+  },
+  {
+    name: "Pavan Kumar",
+    title: "Student Coordinator",
   }
 ];
 
