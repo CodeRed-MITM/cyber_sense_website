@@ -70,16 +70,12 @@ export default function CyberSenseLandingPage() {
       answer: "Yes, teams are strictly limited to 2 members to ensure fair participation and collaboration. Please check the official registration details for any updates regarding team size for this year's event."
     },
     {
-      question: "Are pre-existing projects allowed?",
-      answer: "No, all work submitted for the competition challenges must be created during the official event timeframe. The goal is to test your skills and creativity on the spot!"
-    },
-    {
       question: "Will there be mentors or guidance available?",
       answer: "While direct answers to challenges won't be provided, event organizers and volunteers will be available to clarify rules, assist with technical difficulties related to the platform, and offer general guidance to ensure a smooth experience for all participants."
     },
     {
       question: "Will food and refreshments be provided?",
-      answer: "We aim to keep our participants energized! Light refreshments and water are typically available. Please check the final event schedule and announcements for specific details on food and beverage provisions."
+      answer: "We aim to keep our participants energized! Lunch and light refreshments, along with water, are typically available. Please check the final event schedule and announcements for specific details on food and beverage provisions."
     }
   ];
 
