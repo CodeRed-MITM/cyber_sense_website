@@ -4,6 +4,7 @@ import VenueMap from '@/components/landing/VenueMap';
 import CompetitionStages from '@/components/landing/CompetitionStages';
 import type { StageInfo } from '@/components/landing/CompetitionStages';
 import RegistrationSection from '@/components/landing/RegistrationSection';
+import ContactUsSection from '@/components/landing/ContactUsSection'; // Import the new component
 import { Separator } from '@/components/ui/separator';
 
 export default function CyberSenseLandingPage() {
@@ -74,6 +75,8 @@ export default function CyberSenseLandingPage() {
         />
         <Separator className="my-12 md:my-16 bg-border/50" />
         <RegistrationSection registrationLink={eventDetails.registrationLink} />
+        <Separator className="my-12 md:my-16 bg-border/50" /> {/* Separator for Contact Us */}
+        <ContactUsSection /> {/* Add the new section here */}
       </main>
       
       <footer className="py-10 border-t border-border/50 text-center">
