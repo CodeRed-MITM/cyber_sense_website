@@ -49,9 +49,9 @@ export default function CyberSenseLandingPage() {
   ];
 
   const venueDetails = {
-    collegeName: "Tech Horizon Institute", // Example name
-    address: "Cyber Park, Innovation Drive, Tech City, TC 10101", // Example address
-    coordinates: { lat: 37.4220, lng: -122.0841 } // Example: Googleplex coordinates
+    collegeName: "Maharaja Institute of Technology, Mysore",
+    address: "Belawadi, Mandya District, Mysore, Karnataka 571477", 
+    coordinates: { lat: 12.3599, lng: 76.6150 } // Approximate coordinates for MIT Mysore
   };
 
   return (
