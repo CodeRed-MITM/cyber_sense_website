@@ -16,8 +16,8 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoUrl, backgroundImageUrl, registrationLink }) => {
   return (
     <header className="relative h-[70vh] md:h-[80vh] flex items-center justify-center text-center text-white shadow-2xl overflow-hidden">
-      {/* Integrated Navbar */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-background/70 backdrop-blur-md shadow-md print:hidden">
+      {/* Integrated Navbar - Now Fixed */}
+      <div className="fixed top-0 left-0 right-0 z-30 bg-background/70 backdrop-blur-md shadow-md print:hidden">
         <div className="container mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           <Link href="#" className="text-xl sm:text-2xl font-orbitron font-bold text-primary uppercase">
             {eventName}
@@ -34,10 +34,10 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
         muted
         playsInline // Important for iOS
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1] brightness-[0.4]"
-        data-ai-hint="abstract cyber video"
+        data-ai-hint="3d abstract blue"
       />
-      <div className="relative z-10 p-4 sm:p-6 max-w-4xl pt-20 md:pt-24"> {/* Added padding-top */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
+      <div className="relative z-10 p-4 sm:p-6 max-w-4xl pt-20 md:pt-24"> {/* Ensure padding-top accounts for fixed navbar height */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200">{tagline}</p>
