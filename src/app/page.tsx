@@ -67,7 +67,7 @@ export default function CyberSenseLandingPage() {
     },
     {
       question: "Is there a limit to team size?",
-      answer: "Yes, teams are typically limited to 2-4 members to ensure fair participation and collaboration. Please check the official registration details for the exact team size requirements for this year's event."
+      answer: "Yes, teams are strictly limited to 2 members to ensure fair participation and collaboration. Please check the official registration details for any updates regarding team size for this year's event."
     },
     {
       question: "Are pre-existing projects allowed?",
