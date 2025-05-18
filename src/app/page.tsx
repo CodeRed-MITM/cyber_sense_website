@@ -10,9 +10,6 @@ import PosterSection from '@/components/landing/PosterSection';
 import ContactUsSection from '@/components/landing/ContactUsSection';
 import FAQSection from '@/components/landing/FAQSection';
 import { Separator } from '@/components/ui/separator';
-import dynamic from 'next/dynamic';
-
-
 // Removed dynamic import for RotatingCube as the component is no longer used
 // const RotatingCube = dynamic(() => import('@/components/landing/RotatingCube'), {
 //   ssr: false,
@@ -125,10 +122,10 @@ export default function CyberSenseLandingPage() {
 
       <footer className="py-10 border-t border-border/50 text-center text-muted-foreground">
         <p className="mb-2">
-          <span className="font-nunito font-bold text-primary uppercase text-sm">{eventDetails.name}</span> hosted by CodeRed of Dept. of CS-IOT & Cybersecurity.
+          © <span className="font-nunito font-bold text-primary uppercase text-sm">{eventDetails.name}</span> hosted by CodeRed of Dept. of CS-IOT & Cybersecurity.
         </p>
         <p className="text-sm">
-          Website built by <a href="#" className="text-primary font-semibold hover:underline">Mohammed Muhaimin</a> and <a href="#" className="text-primary font-semibold hover:underline">Yashvita A</a>.
+          Website developed by <a href="#" className="text-primary font-semibold hover:underline">Mohammed Muhaimin</a> and <a href="#" className="text-primary font-semibold hover:underline">Yashvitha A</a>.
         </p>
       </footer>
     </div>
