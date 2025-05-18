@@ -19,7 +19,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
       {/* Integrated Navbar - Now Fixed */}
       <div className="fixed top-0 left-0 right-0 z-30 bg-background/70 backdrop-blur-md shadow-md print:hidden">
         <div className="container mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          <Link href="#" className="text-xl sm:text-2xl font-orbitron font-bold text-primary uppercase">
+          <Link href="#" className="text-xl sm:text-2xl font-nunito font-bold text-primary uppercase">
             {eventName}
           </Link>
           <Navbar /> {/* Render the icon navigation */}
@@ -38,9 +38,9 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl pt-20 md:pt-24"> {/* Ensure padding-top accounts for fixed navbar height */}
         <p className="text-sm sm:text-base text-gray-400 mb-2 font-share-tech-mono uppercase tracking-wider">
-          hosted by CodeRed Club
+          powered by Code<span className="text-destructive">Red</span> Club
         </p>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-nunito font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200 italic">
