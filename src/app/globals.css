@@ -8,87 +8,86 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 17%; /* #2B2B2B Dark Gray */
-    --foreground: 0 0% 95%; /* Light gray for text */
+    --background: 220 40% 10%; /* Deep Dark Blue */
+    --foreground: 220 20% 95%; /* Light Bluish White */
 
-    --card: 0 0% 20%; /* Slightly lighter than background */
-    --card-foreground: 0 0% 95%;
+    --card: 220 40% 15%; /* Dark Blue, slightly lighter than background */
+    --card-foreground: 220 20% 95%;
 
-    --popover: 0 0% 20%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 40% 15%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 187 100% 74%; /* #7DF9FF Electric Blue */
-    --primary-foreground: 240 6% 10%; /* Dark color for text on Electric Blue */
+    --primary: 210 90% 60%; /* Vibrant Medium Blue */
+    --primary-foreground: 210 30% 15%; /* Dark Blue for text on primary */
 
-    --secondary: 0 0% 22%; /* A slightly different dark gray */
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 30% 30%; /* Muted Desaturated Blue */
+    --secondary-foreground: 220 20% 95%;
 
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 65%; /* Softer text color */
+    --muted: 220 30% 40%; /* Lighter Muted Blue */
+    --muted-foreground: 220 15% 70%; /* Soft Bluish Gray */
 
-    --accent: 220 70% 50%; /* Dark Blue for accents (vibrant) */
-    --accent-foreground: 0 0% 98%; /* White for text on accent */
+    --accent: 200 100% 55%; /* Bright Cyan-Blue */
+    --accent-foreground: 200 20% 98%; /* Very Light Blue/White for text on accent */
 
-    --destructive: 0 75% 55%; /* A suitable red */
+    --destructive: 0 75% 55%; /* A suitable red - kept for standard error indication */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 25%; /* Border color */
-    --input: 0 0% 25%; /* Input background */
-    --ring: 187 100% 74%; /* Focus ring - Electric Blue */
+    --border: 220 40% 25%; /* Dark Blue Border */
+    --input: 220 40% 25%; /* Dark Blue Input Background */
+    --ring: 210 90% 60%; /* Vibrant Medium Blue for focus ring */
     
-    --chart-1: 187 100% 74%; /* Primary for charts */
-    --chart-2: 220 70% 50%; /* Accent for charts */
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 210 90% 60%; /* Primary Blue */
+    --chart-2: 200 100% 55%; /* Accent Cyan-Blue */
+    --chart-3: 210 70% 75%; /* Light Desaturated Blue */
+    --chart-4: 220 50% 40%; /* Darker Muted Blue */
+    --chart-5: 190 80% 50%; /* Tealish Blue */
     --radius: 0.5rem;
 
-    /* Sidebar variables - adjusted for dark theme consistency if used, though not primary for this landing page */
-    --sidebar-background: 0 0% 12%; /* Even darker for sidebar */
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 187 100% 74%;
-    --sidebar-primary-foreground: 240 6% 10%;
-    --sidebar-accent: 220 70% 50%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 187 100% 74%;
+    --sidebar-background: 220 50% 8%; /* Very Dark Blue for sidebar */
+    --sidebar-foreground: 220 20% 90%; /* Light Bluish Gray for sidebar text */
+    --sidebar-primary: 210 90% 60%;
+    --sidebar-primary-foreground: 210 30% 15%;
+    --sidebar-accent: 200 100% 55%;
+    --sidebar-accent-foreground: 200 20% 98%;
+    --sidebar-border: 220 40% 20%; /* Darker blue border for sidebar */
+    --sidebar-ring: 210 90% 60%;
   }
 
   .dark {
-    --background: 0 0% 17%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 20%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 20%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 187 100% 74%;
-    --primary-foreground: 240 6% 10%;
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 220 70% 50%;
-    --accent-foreground: 0 0% 98%;
+    --background: 220 40% 10%;
+    --foreground: 220 20% 95%;
+    --card: 220 40% 15%;
+    --card-foreground: 220 20% 95%;
+    --popover: 220 40% 15%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 210 90% 60%;
+    --primary-foreground: 210 30% 15%;
+    --secondary: 220 30% 30%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 220 30% 40%;
+    --muted-foreground: 220 15% 70%;
+    --accent: 200 100% 55%;
+    --accent-foreground: 200 20% 98%;
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 187 100% 74%;
+    --border: 220 40% 25%;
+    --input: 220 40% 25%;
+    --ring: 210 90% 60%;
     
-    --chart-1: 187 100% 74%;
-    --chart-2: 220 70% 50%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 210 90% 60%;
+    --chart-2: 200 100% 55%;
+    --chart-3: 210 70% 75%;
+    --chart-4: 220 50% 40%;
+    --chart-5: 190 80% 50%;
 
-    --sidebar-background: 0 0% 12%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 187 100% 74%;
-    --sidebar-primary-foreground: 240 6% 10%;
-    --sidebar-accent: 220 70% 50%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 187 100% 74%;
+    --sidebar-background: 220 50% 8%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 210 90% 60%;
+    --sidebar-primary-foreground: 210 30% 15%;
+    --sidebar-accent: 200 100% 55%;
+    --sidebar-accent-foreground: 200 20% 98%;
+    --sidebar-border: 220 40% 20%;
+    --sidebar-ring: 210 90% 60%;
   }
 }
 
