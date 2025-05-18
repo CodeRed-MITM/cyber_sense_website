@@ -37,10 +37,15 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
         data-ai-hint="3d abstract blue"
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl pt-20 md:pt-24"> {/* Ensure padding-top accounts for fixed navbar height */}
+        <p className="text-sm sm:text-base text-gray-400 mb-2 font-share-tech-mono uppercase tracking-wider">
+          hosted by CodeRed Club
+        </p>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200">{tagline}</p>
+        <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200 italic">
+          &ldquo;{tagline}&rdquo;
+        </p>
         {subtext && subtext.trim() !== '' && (
            <p className="text-md sm:text-lg md:text-xl text-gray-300/80 mb-8 max-w-2xl mx-auto font-press-start-2p text-xs sm:text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: subtext }}></p>
         )}
