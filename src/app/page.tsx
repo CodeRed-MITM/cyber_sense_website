@@ -13,7 +13,8 @@ export default function CyberSenseLandingPage() {
     name: "Cyber Sense",
     tagline: "The only place where breaking things wins prizes",
     subtext: "",
-    backgroundImageUrl: "https://placehold.co/1920x1080.png",
+    backgroundImageUrl: "https://placehold.co/1920x1080.png", // Poster for video
+    backgroundVideoUrl: "/cyber-event-background.mp4", // Path to your video in public folder
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdSVZEYLbOI68I8e9RM-xRlQNr29RWL76r8XHEuNna0s6cl6Q/viewform"
   };
 
@@ -66,6 +67,7 @@ export default function CyberSenseLandingPage() {
         tagline={eventDetails.tagline}
         subtext={eventDetails.subtext}
         backgroundImageUrl={eventDetails.backgroundImageUrl}
+        backgroundVideoUrl={eventDetails.backgroundVideoUrl}
         registrationLink={eventDetails.registrationLink}
       />
 
