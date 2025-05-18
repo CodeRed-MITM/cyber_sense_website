@@ -1,7 +1,7 @@
 
 import type { FC } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Phone, Mail } from 'lucide-react'; // Removed User from here
+import { Phone, Mail } from 'lucide-react';
 
 interface Coordinator {
   name: string;
@@ -41,11 +41,11 @@ const coordinators: Coordinator[] = [
   },
   {
     name: "Nishanth S",
-    title: "Student Coordinator",
+    title: "Social Media Coordinator",
   },
   {
     name: "Pancham Jain",
-    title: "Student Coordinator",
+    title: "Social Media Coordinator",
   }
 ];
 
@@ -59,7 +59,6 @@ const ContactUsSection: FC = () => {
         {coordinators.map((coordinator, index) => (
           <Card key={index} className="bg-card shadow-lg hover:shadow-primary/30 transition-shadow duration-300 rounded-xl flex flex-col">
             <CardHeader className="pb-4 items-center text-center">
-              {/* Removed the User icon and its container div */}
               <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground mb-1">{coordinator.name}</CardTitle>
               <p className="text-sm text-muted-foreground">{coordinator.title}</p>
             </CardHeader>
