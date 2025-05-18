@@ -1,7 +1,7 @@
 
 import type { FC } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, User } from 'lucide-react'; // Added User icon
 
 interface Coordinator {
   name: string;
@@ -58,7 +58,8 @@ const ContactUsSection: FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
         {coordinators.map((coordinator, index) => (
           <Card key={index} className="bg-card shadow-lg hover:shadow-primary/30 transition-shadow duration-300 rounded-xl flex flex-col">
-            <CardHeader className="pb-4 items-center text-center">
+            <CardHeader className="pb-4 items-center text-center pt-6 sm:pt-8">
+              <User className="w-10 h-10 sm:w-12 sm:h-12 text-primary mb-3 sm:mb-4" />
               <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground mb-1">{coordinator.name}</CardTitle>
               <p className="text-sm text-muted-foreground">{coordinator.title}</p>
             </CardHeader>
@@ -80,7 +81,7 @@ const ContactUsSection: FC = () => {
                 </div>
               )}
               {!coordinator.phone && !coordinator.email && (
-                 <div className="flex items-center text-sm sm:text-base text-muted-foreground/70 italic h-10 justify-center"> {/* Added justify-center for consistency */}
+                 <div className="flex items-center text-sm sm:text-base text-muted-foreground/70 italic h-10 justify-center">
                    {/* Intentionally empty or add a generic message if needed */}
                  </div>
               )}
