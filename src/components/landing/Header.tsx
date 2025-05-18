@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Navbar from '@/components/landing/Navbar'; // Import the Navbar component
+import { Shield } from 'lucide-react'; // Import the Shield icon
 
 interface HeaderProps {
   eventName: string;
@@ -19,7 +20,8 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
       {/* Integrated Navbar - Now Fixed */}
       <div className="fixed top-0 left-0 right-0 z-30 bg-background/70 backdrop-blur-md shadow-md print:hidden">
         <div className="container mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          <Link href="#" className="text-xl sm:text-2xl font-orbitron font-bold text-primary uppercase">
+          <Link href="#" className="flex items-center gap-2 text-xl sm:text-2xl font-nunito font-bold text-primary uppercase">
+            <Shield className="h-6 w-6 sm:h-7 sm:h-7" /> {/* Added Shield icon */}
             {eventName}
           </Link>
           <Navbar /> {/* Render the icon navigation */}
@@ -47,7 +49,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
           &ldquo;{tagline}&rdquo;
         </p>
         {subtext && subtext.trim() !== '' && (
-           <p className="text-md sm:text-lg md:text-xl text-gray-300/80 mb-8 max-w-2xl mx-auto font-press-start-2p text-xs sm:text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: subtext }}></p>
+           <p className="text-xs sm:text-sm md:text-md text-gray-300/80 mb-8 max-w-2xl mx-auto font-press-start-2p leading-relaxed" dangerouslySetInnerHTML={{ __html: subtext }}></p>
         )}
         <Button
           asChild
