@@ -31,7 +31,6 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
   const handleError = () => {
     // Check if we are not already displaying the placeholder due to a previous error
     if (currentImageSrc !== placeholderImageUrl && !hasError) {
-      // console.error("Failed to load image from Google Drive, falling back to placeholder."); // Removed this line
       setCurrentImageSrc(placeholderImageUrl);
       setHasError(true); // Set error state to true
     }
@@ -39,7 +38,7 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
 
   return (
     <section id="poster" className="py-12 sm:py-16 md:py-24 text-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-center mb-10 sm:mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-orbitron font-bold text-center mb-10 sm:mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
         Event Poster
       </h2>
       <div className="container mx-auto px-4 flex flex-col items-center">

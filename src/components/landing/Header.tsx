@@ -1,3 +1,4 @@
+
 import type { FC } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundImageU
         data-ai-hint="3d abstract blue"
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-orbitron font-bold uppercase mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200">{tagline}</p>

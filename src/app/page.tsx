@@ -69,7 +69,7 @@ export default function CyberSenseLandingPage() {
         registrationLink={eventDetails.registrationLink}
       />
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-8vh] mb-16 md:mb-24 relative z-[5]"> {/* Pull content up slightly */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]"> {/* Pull content up slightly */}
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
         <VenueMap
