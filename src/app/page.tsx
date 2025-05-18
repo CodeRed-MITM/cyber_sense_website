@@ -98,7 +98,7 @@ export default function CyberSenseLandingPage() {
         registrationLink={eventDetails.registrationLink}
       />
       
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mb-16 md:mb-24 relative z-[5]">
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
         
@@ -118,11 +118,11 @@ export default function CyberSenseLandingPage() {
         <ContactUsSection />
       </main>
 
-      <footer className="py-10 border-t border-border/50 text-center text-muted-foreground">
-        <p className="mb-2">
+      <footer className="py-10 border-t border-border/50 text-center">
+        <p className="mb-2 text-muted-foreground">
           © <span className="font-nunito font-bold text-primary uppercase text-sm">{eventDetails.name}</span> hosted by CodeRed of Dept. of CS-IOT & Cybersecurity.
         </p>
-        <p className="text-sm">
+        <p className="text-sm text-muted-foreground">
           Website developed by <a href="https://www.linkedin.com/in/mohammedmuhaimin" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Mohammed Muhaimin</a> and <a href="https://www.linkedin.com/in/yashvitha-a-8b934332a/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Yashvitha A</a>.
         </p>
       </footer>
