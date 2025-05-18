@@ -1,0 +1,222 @@
+@import 'https://cdn.maptiler.com/maptiler-sdk-js/latest/maptiler-sdk.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Register Button Glow */
+.register-button {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.register-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    hsl(var(--accent)) 0%,
+    hsl(var(--primary)) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+              0 0 40px hsl(var(--accent) / 0.3);
+}
+
+.register-button:hover::before {
+  opacity: 1;
+}
+
+.register-button span {
+  position: relative;
+  z-index: 2;
+  color: hsl(var(--primary-foreground));
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+  text-shadow: 0.02em 0 0 #00fffc, -0.01em -0.01em 0 #fc00ff,
+                0.01em 0.01em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.01em, -0.01em);
+  opacity: 0.5;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.01em, 0.01em);
+  opacity: 0.5;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.02em 0 0 #00fffc, -0.01em -0.01em 0 #fc00ff,
+                 0.01em 0.01em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.02em 0 0 #00fffc, -0.01em -0.01em 0 #fc00ff,
+                 0.01em 0.01em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.02em -0.01em 0 #00fffc, 0.01em 0.01em 0 #fc00ff,
+                 -0.02em -0.02em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.02em -0.01em 0 #00fffc, 0.01em 0.01em 0 #fc00ff,
+                 -0.02em -0.02em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.02em 0.01em 0 #00fffc, 0.01em 0 0 #fc00ff,
+                 0 -0.01em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.02em 0.01em 0 #00fffc, 0.01em 0 0 #fc00ff,
+                 0 -0.01em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.02em 0 0 #00fffc, -0.01em -0.01em 0 #fc00ff,
+                 -0.01em -0.01em 0 #fffc00;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Default, overridden by layout.tsx */
+}
+
+@layer base {
+  :root {
+    /* Base Background and Foreground */
+    --background: 212 65% 11%;   /* Deep Space Blue #0A192F */
+    --foreground: 208 100% 97%;  /* Glacial White #F0F8FF */
+
+    /* Card and Popover Backgrounds & Foregrounds */
+    --card: 212 47% 19%;          /* Starlight Blue #172A45 */
+    --card-foreground: 208 100% 97%; /* Glacial White #F0F8FF */
+
+    --popover: 212 47% 19%;        /* Starlight Blue #172A45 */
+    --popover-foreground: 208 100% 97%; /* Glacial White #F0F8FF */
+
+    /* Primary Interactive Elements */
+    --primary: 220 83% 66%;        /* Sapphire Glow #6495ED */
+    --primary-foreground: 210 100% 98%; /* Very light for contrast on Sapphire Glow */
+
+    /* Secondary Elements */
+    --secondary: 208 25% 48%;       /* Nebula Blue #5A7D9A */
+    --secondary-foreground: 208 100% 97%; /* Glacial White #F0F8FF for text on Nebula Blue */
+
+    /* Muted Elements */
+    --muted: 208 25% 40%;          /* Darker/Desaturated Nebula Blue for muted backgrounds/text */
+    --muted-foreground: 208 53% 89%;  /* Arctic Blue #D6E6F2 for text on muted backgrounds */
+
+    /* Accent Elements */
+    --accent: 193 100% 50%;        /* Celestial Blue #00D2FF */
+    --accent-foreground: 212 65% 11%; /* Deep Space Blue for high contrast on bright Celestial Blue */
+
+    /* Destructive Elements (Standard) */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders, Inputs, and Rings */
+    --border: 208 25% 35%;         /* Darker Nebula Blue for distinct borders */
+    --input: 208 25% 30%;          /* Even darker Nebula Blue for input backgrounds */
+    --ring: 220 83% 66%;           /* Sapphire Glow for focus rings */
+    
+    /* Chart Colors */
+    --chart-1: 220 83% 66%;      /* Sapphire Glow (Primary) */
+    --chart-2: 193 100% 50%;      /* Celestial Blue (Accent) */
+    --chart-3: 208 25% 48%;      /* Nebula Blue (Secondary) */
+    --chart-4: 220 83% 75%;      /* Lighter Sapphire Glow */
+    --chart-5: 193 100% 60%;      /* Lighter Celestial Blue */
+
+    --radius: 0.5rem;
+
+    /* Sidebar Specific Theme */
+    --sidebar-background: 212 47% 19%;  /* Starlight Blue */
+    --sidebar-foreground: 208 100% 97%;  /* Glacial White */
+    --sidebar-primary: 220 83% 66%;     /* Sapphire Glow */
+    --sidebar-primary-foreground: 210 100% 98%; /* Very light for contrast */
+    --sidebar-accent: 193 100% 50%;      /* Celestial Blue */
+    --sidebar-accent-foreground: 212 65% 11%; /* Deep Space Blue */
+    --sidebar-border: 208 25% 30%;    /* Darker Nebula Blue for sidebar borders */
+    --sidebar-ring: 220 83% 66%;        /* Sapphire Glow */
+  }
+
+  .dark { /* Ensure dark theme variables mirror the root for consistency as this is a dark theme by design */
+    --background: 212 65% 11%;
+    --foreground: 208 100% 97%;
+    --card: 212 47% 19%;
+    --card-foreground: 208 100% 97%;
+    --popover: 212 47% 19%;
+    --popover-foreground: 208 100% 97%;
+    --primary: 220 83% 66%;
+    --primary-foreground: 210 100% 98%;
+    --secondary: 208 25% 48%;
+    --secondary-foreground: 208 100% 97%;
+    --muted: 208 25% 40%;
+    --muted-foreground: 208 53% 89%;
+    --accent: 193 100% 50%;
+    --accent-foreground: 212 65% 11%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 208 25% 35%;
+    --input: 208 25% 30%;
+    --ring: 220 83% 66%;
+    
+    --chart-1: 220 83% 66%;
+    --chart-2: 193 100% 50%;
+    --chart-3: 208 25% 48%;
+    --chart-4: 220 83% 75%;
+    --chart-5: 193 100% 60%;
+
+    --sidebar-background: 212 47% 19%;
+    --sidebar-foreground: 208 100% 97%;
+    --sidebar-primary: 220 83% 66%;
+    --sidebar-primary-foreground: 210 100% 98%;
+    --sidebar-accent: 193 100% 50%;
+    --sidebar-accent-foreground: 212 65% 11%;
+    --sidebar-border: 208 25% 30%;
+    --sidebar-ring: 220 83% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
