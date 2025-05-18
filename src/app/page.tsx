@@ -77,7 +77,7 @@ export default function CyberSenseLandingPage() {
       
       <footer className="py-10 border-t border-border/50 text-center">
         <p className="text-muted-foreground">
-          &copy; {new Date().getFullYear()} {eventDetails.name}. Unleash Your Cyber Potential.
+          &copy; {new Date().getFullYear()} <span className="font-orbitron">{eventDetails.name}</span>. Unleash Your Cyber Potential.
         </p>
       </footer>
     </div>

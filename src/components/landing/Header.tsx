@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundImageU
         data-ai-hint="hacking digital security"
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-orbitron font-bold mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
           {eventName}
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200">{tagline}</p>

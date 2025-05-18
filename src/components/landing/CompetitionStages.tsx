@@ -16,7 +16,7 @@ interface CompetitionStagesProps {
 const CompetitionStages: FC<CompetitionStagesProps> = ({ stages }) => {
   return (
     <section id="stages" className="py-16 md:py-24">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
+      <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-center mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
         Competition Stages
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
@@ -29,7 +29,7 @@ const CompetitionStages: FC<CompetitionStagesProps> = ({ stages }) => {
             >
               <CardHeader className="items-center text-center pt-8">
                 {IconComponent && <IconComponent className="w-14 h-14 mb-5 text-primary" strokeWidth={1.5} />}
-                <CardTitle className="text-2xl text-primary-foreground">{stage.title}</CardTitle>
+                <CardTitle className="text-2xl font-orbitron text-primary-foreground">{stage.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center pb-8 flex-grow">
                 <CardDescription className="text-muted-foreground text-base leading-relaxed">{stage.description}</CardDescription>

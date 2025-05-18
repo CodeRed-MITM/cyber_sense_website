@@ -23,7 +23,7 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
 
   return (
     <section id="venue" className="py-16 md:py-24">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
+      <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-center mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
         Event Venue
       </h2>
       <Card className="bg-card shadow-xl rounded-xl overflow-hidden">
@@ -31,7 +31,7 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
           <div className="flex items-center space-x-4 mb-3">
             <MapPin className="w-10 h-10 text-primary flex-shrink-0" />
             <div>
-              <CardTitle className="text-3xl text-primary-foreground">{collegeName}</CardTitle>
+              <CardTitle className="text-3xl font-orbitron text-primary-foreground">{collegeName}</CardTitle>
               <CardDescription className="text-muted-foreground text-lg">{address}</CardDescription>
             </div>
           </div>

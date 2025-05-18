@@ -12,7 +12,7 @@ const RegistrationSection: FC<RegistrationSectionProps> = ({ registrationLink })
     <section id="register" className="py-16 md:py-24 text-center bg-card-foreground/5 rounded-xl shadow-inner">
       <div className="container mx-auto px-4">
         <Ticket className="w-16 h-16 text-primary mx-auto mb-6" />
-        <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: 'hsl(var(--primary))' }}>
+        <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6" style={{ color: 'hsl(var(--primary))' }}>
           Ready to Test Your Mettle?
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">

@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+        orbitron: ['var(--font-orbitron)'],
+        'share-tech-mono': ['var(--font-share-tech-mono)'],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
