@@ -1,6 +1,6 @@
 
 import Header from '@/components/landing/Header';
-import Navbar from '@/components/landing/Navbar';
+// import Navbar from '@/components/landing/Navbar'; // Navbar is now integrated into Header
 import VenueMap from '@/components/landing/VenueMap';
 import CompetitionStages from '@/components/landing/CompetitionStages';
 import type { StageInfo } from '@/components/landing/CompetitionStages';
@@ -14,9 +14,9 @@ export default function CyberSenseLandingPage() {
   const eventDetails = {
     name: "Cyber Sense",
     tagline: "The only place where breaking things wins prizes",
-    subtext: "",
+    subtext: "", // "Whereas disregard and contempt for human rights have resulted <br /> in barbarous acts which have outraged the conscience of mankind",
     backgroundImageUrl: "https://placehold.co/1920x1080.png",
-    backgroundVideoUrl: "/cyber-event-background.mp4",
+    backgroundVideoUrl: "/cyber-event-background.mp4", // Ensure this video exists in /public
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdSVZEYLbOI68I8e9RM-xRlQNr29RWL76r8XHEuNna0s6cl6Q/viewform"
   };
 
@@ -56,10 +56,12 @@ export default function CyberSenseLandingPage() {
   const venueDetails = {
     collegeName: "Maharaja Institute of Technology, Mysore",
     address: "Belawadi, Mandya District, Mysore, Karnataka 571477",
-    coordinates: { lat: 12.3664375, lng: 76.6888125 }
+    coordinates: { lat: 12.3664375, lng: 76.6888125 } // Approx for 9M8Q+HG Srirangapatna
   };
 
   const posterLink = "https://drive.google.com/file/d/1G0l2_ODxJGBMwNoOhaT22Fzra2Ri6cl2/view?usp=sharing";
+  const localPosterImage = "/CyberSense Poster - Hosted by IOT & CB CodeRed.png";
+
 
   const faqItems = [
     {
@@ -91,7 +93,7 @@ export default function CyberSenseLandingPage() {
         backgroundVideoUrl={eventDetails.backgroundVideoUrl}
         registrationLink={eventDetails.registrationLink}
       />
-      <Navbar /> {/* Added Navbar */}
+      {/* <Navbar /> Navbar is now part of Header */}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]">
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
