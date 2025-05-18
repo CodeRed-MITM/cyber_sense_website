@@ -10,11 +10,6 @@ import PosterSection from '@/components/landing/PosterSection';
 import ContactUsSection from '@/components/landing/ContactUsSection';
 import FAQSection from '@/components/landing/FAQSection';
 import { Separator } from '@/components/ui/separator';
-// Removed dynamic import for RotatingCube as the component is no longer used
-// const RotatingCube = dynamic(() => import('@/components/landing/RotatingCube'), {
-//   ssr: false,
-//   loading: () => <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] flex items-center justify-center bg-card/30 rounded-lg border border-border"><p className="text-muted-foreground">Loading 3D Artifact...</p></div>,
-// });
 
 
 export default function CyberSenseLandingPage() {
@@ -125,9 +120,10 @@ export default function CyberSenseLandingPage() {
           © <span className="font-nunito font-bold text-primary uppercase text-sm">{eventDetails.name}</span> hosted by CodeRed of Dept. of CS-IOT & Cybersecurity.
         </p>
         <p className="text-sm">
-          Website developed by <a href="#" className="text-primary font-semibold hover:underline">Mohammed Muhaimin</a> and <a href="#" className="text-primary font-semibold hover:underline">Yashvitha A</a>.
+          Website developed by <a href="https://www.linkedin.com/in/mohammedmuhaimin" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Mohammed Muhaimin</a> and <a href="https://www.linkedin.com/in/yashvitha-a-8b934332a/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Yashvitha A</a>.
         </p>
       </footer>
     </div>
   );
 }
+
