@@ -13,7 +13,7 @@ export default function CyberSenseLandingPage() {
   const eventDetails = {
     name: "Cyber Sense",
     tagline: "The only place where breaking things wins prizes",
-    subtext: "Whereas disregard and contempt for human rights have resulted <br /> in barbarous acts which have outraged the conscience of mankind",
+    subtext: "",
     backgroundImageUrl: "https://placehold.co/1920x1080.png",
     backgroundVideoUrl: "/cyber-event-background.mp4",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdSVZEYLbOI68I8e9RM-xRlQNr29RWL76r8XHEuNna0s6cl6Q/viewform"
