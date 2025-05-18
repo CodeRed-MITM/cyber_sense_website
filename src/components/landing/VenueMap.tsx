@@ -15,11 +15,22 @@ interface VenueMapProps {
 const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
   const [apiKey, setApiKey] = useState<string | undefined>(undefined);
   const [showInfoWindow, setShowInfoWindow] = useState(true);
+  // State for custom pixel offset for the InfoWindow
+  const [customPixelOffset, setCustomPixelOffset] = useState<google.maps.Size | undefined>(undefined);
 
   useEffect(() => {
     // Ensure this runs only on the client after hydration
     setApiKey(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
-  }, []);
+
+    // Create the pixelOffset once the Google Maps API is available client-side.
+    // This ensures 'google.maps.Size' is defined before use.
+    if (typeof window !== 'undefined' && window.google && window.google.maps) {
+      // Example: Shift InfoWindow 40 pixels upwards from the marker's default anchor.
+      // The first parameter is horizontal offset (positive right, negative left).
+      // The second parameter is vertical offset (positive down, negative up).
+      setCustomPixelOffset(new window.google.maps.Size(0, -40));
+    }
+  }, []); // Empty dependency array: runs once on mount client-side
 
   return (
     <section id="venue" className="py-12 sm:py-16 md:py-24">
@@ -45,7 +56,7 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
                   defaultZoom={15}
                   gestureHandling="greedy"
                   disableDefaultUI={false}
-                  mapId="cyberSenseMapStyle" 
+                  mapId="cyberSenseMapStyle"
                   className="w-full h-full"
                   mapTypeControl={false}
                   streetViewControl={false}
@@ -54,7 +65,11 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
                 >
                   <Marker position={coordinates} onClick={() => setShowInfoWindow(!showInfoWindow)} />
                   {showInfoWindow && (
-                     <InfoWindow position={coordinates} onCloseClick={() => setShowInfoWindow(false)}>
+                     <InfoWindow
+                        position={coordinates}
+                        pixelOffset={customPixelOffset} // Apply the custom pixel offset here
+                        onCloseClick={() => setShowInfoWindow(false)}
+                      >
                         <div className="p-2 text-foreground bg-background rounded-md shadow-md">
                            <h3 className="font-semibold text-sm sm:text-md text-primary">{collegeName}</h3>
                            <p className="text-xs sm:text-sm">{address}</p>
