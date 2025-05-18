@@ -14,7 +14,7 @@ export default function CyberSenseLandingPage() {
     name: "Cyber Sense",
     tagline: "The only place where breaking things wins prizes",
     subtext: "Whereas disregard and contempt for human rights have resulted <br /> in barbarous acts which have outraged the conscience of mankind",
-    backgroundImageUrl: "https://placehold.co/1920x1080.png", 
+    backgroundImageUrl: "https://placehold.co/1920x1080.png",
     backgroundVideoUrl: "/cyber-event-background.mp4",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdSVZEYLbOI68I8e9RM-xRlQNr29RWL76r8XHEuNna0s6cl6Q/viewform"
   };
@@ -55,7 +55,7 @@ export default function CyberSenseLandingPage() {
   const venueDetails = {
     collegeName: "Maharaja Institute of Technology, Mysore",
     address: "Belawadi, Mandya District, Mysore, Karnataka 571477",
-    coordinates: { lat: 12.3664375, lng: 76.6888125 } 
+    coordinates: { lat: 12.3664375, lng: 76.6888125 }
   };
 
   const posterLink = "https://drive.google.com/file/d/1G0l2_ODxJGBMwNoOhaT22Fzra2Ri6cl2/view?usp=sharing";
@@ -63,7 +63,7 @@ export default function CyberSenseLandingPage() {
   const faqItems = [
     {
       question: "Do I need prior coding experience?",
-      answer: "While some challenges might involve coding, Cyber Sense is designed to test a range of cybersecurity skills, including problem-solving, analytical thinking, and digital forensics. Participants of all skill levels are welcome, and many challenges focus more on wit and strategy than pure coding."
+      answer: "Not at all! Cyber Sense is designed to be beginner-friendly and welcomes participants with no prior coding experience. The challenges focus on a range of skills including problem-solving, analytical thinking, and digital forensics, not just coding."
     },
     {
       question: "Is there a limit to team size?",
