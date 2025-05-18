@@ -1,5 +1,6 @@
 
 import Header from '@/components/landing/Header';
+import Navbar from '@/components/landing/Navbar';
 import VenueMap from '@/components/landing/VenueMap';
 import CompetitionStages from '@/components/landing/CompetitionStages';
 import type { StageInfo } from '@/components/landing/CompetitionStages';
@@ -90,7 +91,7 @@ export default function CyberSenseLandingPage() {
         backgroundVideoUrl={eventDetails.backgroundVideoUrl}
         registrationLink={eventDetails.registrationLink}
       />
-
+      <Navbar /> {/* Added Navbar */}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]">
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
