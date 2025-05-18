@@ -29,7 +29,7 @@ const CompetitionStages: FC<CompetitionStagesProps> = ({ stages }) => {
             >
               <CardHeader className="items-center text-center pt-6 sm:pt-8">
                 {IconComponent && <IconComponent className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-4 sm:mb-5 text-primary" strokeWidth={1.5} />}
-                <CardTitle className="text-xl sm:text-2xl font-orbitron text-primary-foreground">{stage.title}</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground">{stage.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center px-4 pb-6 sm:px-6 sm:pb-8 flex-grow">
                 <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed">{stage.description}</CardDescription>
