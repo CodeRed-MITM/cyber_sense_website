@@ -15,13 +15,13 @@ const coordinators: Coordinator[] = [
     name: "Punith Kumar",
     title: "Event Organizer",
     phone: "+91 8861608621", 
-    email: "punith.k@example.com" 
+    email: "punithkicchu346@gmail.com" 
   },
   {
     name: "Sneha R",
     title: "Event Organizer",
     phone: "+91 9900827056", 
-    email: "sneha.r@example.com" 
+    email: "snehargowda24@gmail.com" 
   },
   {
     name: "Mohammed Muhaimin",
@@ -69,7 +69,9 @@ const ContactUsSection: FC = () => {
               {coordinator.phone && (
                 <div className="flex items-center text-sm sm:text-base text-muted-foreground">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-accent flex-shrink-0" />
-                  <span>{coordinator.phone}</span>
+                  <a href={`tel:${coordinator.phone.replace(/\s/g, '')}`} className="hover:text-accent transition-colors">
+                    {coordinator.phone}
+                  </a>
                 </div>
               )}
               {coordinator.email && (
