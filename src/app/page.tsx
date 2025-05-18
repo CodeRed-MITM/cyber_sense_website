@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator';
 export default function CyberSenseLandingPage() {
   const eventDetails = {
     name: "Cyber Sense",
-    tagline: "Dive into the Digital Labyrinth & Conquer the Code",
+    tagline: "The only place where breaking things wins prizes",
     subtext: "An exhilarating cybersecurity competition designed to challenge your intellect, test your skills, and push your boundaries. Are you ready to prove your prowess?",
     backgroundImageUrl: "https://placehold.co/1920x1080.png",
     registrationLink: "https://example.com/register-cyber-sense" // Placeholder link
