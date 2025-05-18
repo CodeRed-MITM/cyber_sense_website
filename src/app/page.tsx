@@ -1,4 +1,6 @@
 
+"use client";
+
 import Header from '@/components/landing/Header';
 // import Navbar from '@/components/landing/Navbar'; // Navbar is now integrated into Header
 import VenueMap from '@/components/landing/VenueMap';
@@ -9,6 +11,14 @@ import PosterSection from '@/components/landing/PosterSection';
 import ContactUsSection from '@/components/landing/ContactUsSection';
 import FAQSection from '@/components/landing/FAQSection';
 import { Separator } from '@/components/ui/separator';
+// import dynamic from 'next/dynamic'; // Removed dynamic import for RotatingCube
+
+// Removed dynamic import for RotatingCube as the component is no longer used
+// const RotatingCube = dynamic(() => import('@/components/landing/RotatingCube'), {
+//   ssr: false,
+//   loading: () => <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] flex items-center justify-center bg-card/30 rounded-lg border border-border"><p className="text-muted-foreground">Loading 3D Artifact...</p></div>,
+// });
+
 
 export default function CyberSenseLandingPage() {
   const eventDetails = {
@@ -69,7 +79,7 @@ export default function CyberSenseLandingPage() {
       answer: "Not at all! Cyber Sense is designed to be beginner-friendly and welcomes participants with no prior coding experience. The challenges focus on a range of skills including problem-solving, analytical thinking, and digital forensics, not just coding."
     },
     {
-      question: "Is there a limit to team size?",
+      question: "What is the size of a team?",
       answer: "Yes, teams are strictly limited to 2 members to ensure fair participation and collaboration."
     },
     {
@@ -97,6 +107,14 @@ export default function CyberSenseLandingPage() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]">
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
+        {/* Removed RotatingCube section as the component is no longer used */}
+        {/* <section id="digital-artifact" className="py-12 sm:py-16 md:py-24">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nunito font-bold text-center mb-10 sm:mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
+            Digital Artifact
+          </h2>
+          <RotatingCube /> 
+        </section>
+        <Separator className="my-12 md:my-16 bg-border/50" /> */}
         <VenueMap
           collegeName={venueDetails.collegeName}
           address={venueDetails.address}
@@ -114,7 +132,7 @@ export default function CyberSenseLandingPage() {
 
       <footer className="py-10 border-t border-border/50 text-center">
         <p className="text-muted-foreground">
-          &copy; {new Date().getFullYear()} <span className="font-orbitron font-bold uppercase text-sm">{eventDetails.name}</span>. Unleash Your Cyber Potential.
+          &copy; {new Date().getFullYear()} <span className="font-nunito font-bold uppercase text-sm">{eventDetails.name}</span>. Unleash Your Cyber Potential.
         </p>
       </footer>
     </div>
