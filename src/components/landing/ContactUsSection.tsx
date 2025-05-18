@@ -25,11 +25,11 @@ const coordinators: Coordinator[] = [
   },
   {
     name: "Mohammed Muhaimin",
-    title: "Student Coordinator",
+    title: "Technical Coordinator",
   },
   {
     name: "Yashvitha A",
-    title: "Student Coordinator",
+    title: "Technical Coordinator",
   },
   {
     name: "Deekshitha",
