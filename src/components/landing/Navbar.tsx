@@ -37,18 +37,15 @@ const Navbar = () => {
   useEffect(() => {
     if (!isClient) return;
 
-    // Function to get active ID from hash, for initial load and hash changes
     const getActiveIdFromHash = () => window.location.hash.substring(1) || '';
 
     const handleHashChange = () => {
       setActiveId(getActiveIdFromHash());
     };
 
-    // Set initial active ID based on hash
     setActiveId(getActiveIdFromHash());
     window.addEventListener('hashchange', handleHashChange, { passive: true });
 
-    // Intersection Observer logic
     navItemsData.forEach(item => {
       if (item.id) {
         sectionRefs.current.set(item.id, document.getElementById(item.id));
@@ -58,42 +55,44 @@ const Navbar = () => {
     const sectionsToObserve = Array.from(sectionRefs.current.values()).filter(Boolean) as HTMLElement[];
 
     if (sectionsToObserve.length > 0) {
-      const navbarHeight = 64; // Approximate height of your fixed navbar (h-16)
-      const topActivationOffset = navbarHeight + 32; // Start activating 32px below the navbar
-      const activationBandHeight = 150; // Consider a section active if its top is within this band from the topActivationOffset
+      const navbarHeight = 64; 
+      const topActivationOffset = navbarHeight + 32; 
+      const activationBandHeight = 150; 
 
       const observerCallback = (entries: IntersectionObserverEntry[]) => {
-        const intersectingEntries = entries.filter(entry => entry.isIntersecting);
-        let newActiveId = '';
+        let currentTopSectionId: string | null = null;
 
-        if (intersectingEntries.length > 0) {
-          // Find the topmost section that is intersecting according to DOM order
-          for (const navItem of navItemsData) {
-            if (navItem.id && intersectingEntries.some(entry => entry.target.id === navItem.id)) {
-              newActiveId = navItem.id;
-              break;
-            }
+        // Find the highest section in navItemsData order that is currently intersecting
+        for (const navItem of navItemsData) {
+          if (!navItem.id) continue; // Skip "Home" or items without an actual section ID
+
+          const entry = entries.find(e => e.target.id === navItem.id);
+          if (entry && entry.isIntersecting) {
+            currentTopSectionId = navItem.id;
+            break; // Found the first one in DOM/navItemsData order, this is our candidate
           }
         }
-        
-        // If no section is intersecting based on observer, check scroll position for "Home"
-        // Or if the determined newActiveId is for a section far down, but we're at top, prefer Home
-        if (window.scrollY < window.innerHeight * 0.3 && (newActiveId === '' || document.getElementById(newActiveId)?.getBoundingClientRect().top > window.innerHeight * 0.4)) {
-          setActiveId(''); // Set to Home
+      
+        const isScrolledToVeryTop = window.scrollY < 50; // A small threshold for being at the very top
+
+        if (currentTopSectionId) {
+          // A section is intersecting in our band
+          setActiveId(currentTopSectionId);
         } else {
-          setActiveId(newActiveId);
+          // No section is intersecting in our band
+          if (isScrolledToVeryTop) {
+            setActiveId(''); // Set to "Home" if at the very top of the page
+          }
+          // ELSE: Do nothing, activeId remains the same, preserving the last active section icon.
         }
       };
       
-      // This rootMargin tries to define a band below the navbar.
-      // top margin: negative value to pull the top of the observation area up.
-      // bottom margin: large negative value to effectively make the observation area a strip from the top.
       const rootMarginTop = `-${topActivationOffset -1}px`;
       const rootMarginBottom = `-${window.innerHeight - topActivationOffset - activationBandHeight}px`;
 
       observerRef.current = new IntersectionObserver(observerCallback, {
         rootMargin: `${rootMarginTop} 0px ${rootMarginBottom} 0px`,
-        threshold: 0.01, // Triggers as soon as a tiny part enters the intersection area
+        threshold: 0.01, 
       });
 
       sectionsToObserve.forEach(section => {
@@ -101,7 +100,6 @@ const Navbar = () => {
       });
     }
 
-    // Cleanup
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
       if (observerRef.current) {
@@ -111,9 +109,8 @@ const Navbar = () => {
         observerRef.current.disconnect();
       }
     };
-  }, [isClient]); // Removed navItemsData from deps as it's constant
+  }, [isClient]); 
 
-  // Basic SSR version to prevent hydration errors if client-specific logic isn't ready
   if (!isClient) { 
     return (
       <div className="flex space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4">
@@ -137,15 +134,13 @@ const Navbar = () => {
                   href={item.href}
                   onClick={(e) => {
                      if (item.href === '#') {
-                       e.preventDefault(); // Prevent default hash jump for home
+                       e.preventDefault(); 
                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                       // Manually clear the hash from URL without adding to history
                        if (window.location.hash) {
                          window.history.pushState("", document.title, window.location.pathname + window.location.search);
                        }
-                       setActiveId(''); // Set home as active
+                       setActiveId(''); 
                      }
-                     // For other links, hashchange listener will handle setActiveId
                   }}
                   className={cn(
                     "p-2 sm:p-3 rounded-lg transition-all duration-200 ease-in-out flex items-center text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
