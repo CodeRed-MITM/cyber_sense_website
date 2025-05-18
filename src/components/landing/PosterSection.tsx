@@ -13,28 +13,25 @@ interface PosterSectionProps {
 }
 
 const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
-  const fileId = "1G0l2_ODxJGBMwNoOhaT22Fzra2Ri6cl2";
-  const gDriveImageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+  const localPosterPath = "/CyberSense Poster - Hosted by IOT & CB CodeRed.png";
   const placeholderImageUrl = 'https://placehold.co/600x849.png';
 
-  const [currentImageSrc, setCurrentImageSrc] = useState(placeholderImageUrl);
+  const [currentImageSrc, setCurrentImageSrc] = useState(localPosterPath);
   const [hasError, setHasError] = useState(false);
 
-  useEffect(() => {
-    // Only attempt to load the Google Drive image on the client side
-    // and only if no error has occurred yet for this specific gDriveImageUrl.
-    if (!hasError) {
-      setCurrentImageSrc(gDriveImageUrl);
-    }
-  }, [gDriveImageUrl, hasError]); // Depend on gDriveImageUrl and hasError
-
   const handleError = () => {
-    // Check if we are not already displaying the placeholder due to a previous error
     if (currentImageSrc !== placeholderImageUrl && !hasError) {
       setCurrentImageSrc(placeholderImageUrl);
-      setHasError(true); // Set error state to true
+      setHasError(true); 
     }
   };
+
+  // Reset error state if posterGdriveLink changes, to allow re-attempting local image load
+  useEffect(() => {
+    setHasError(false);
+    setCurrentImageSrc(localPosterPath);
+  }, [localPosterPath]);
+
 
   return (
     <section id="poster" className="py-12 sm:py-16 md:py-24 text-center">
@@ -52,13 +49,11 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
             className="w-full h-auto object-contain"
             data-ai-hint="event poster"
             priority
-            unoptimized={true}
-            onError={currentImageSrc === gDriveImageUrl && !hasError ? handleError : undefined}
+            onError={!hasError ? handleError : undefined} // Only attach onError if we haven't already errored to placeholder
           />
         </div>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-          You can view the official event poster using the link below. For the best display integrated into this website,
-          it's recommended to download the poster and place it in the project's `public` folder, then update the image source path in the code.
+          The event poster is displayed above. If you see a placeholder, ensure the image named <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">CyberSense Poster - Hosted by IOT & CB CodeRed.png</code> is in the <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">public</code> folder of your project. You can also view the poster on Google Drive using the link below.
         </p>
         <Button asChild variant="outline" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
           <Link href={posterGdriveLink} target="_blank" rel="noopener noreferrer">
@@ -71,3 +66,4 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
 };
 
 export default PosterSection;
+
