@@ -6,14 +6,16 @@ import { APIProvider, Map, Marker, InfoWindow } from '@vis.gl/react-google-maps'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface VenueMapProps {
   collegeName: string;
   address: string;
   coordinates: { lat: number; lng: number };
+  gmapsLink: string;
 }
 
-const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
+const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates, gmapsLink }) => {
   const [apiKey, setApiKey] = useState<string | undefined>(undefined);
   const [showInfoWindow, setShowInfoWindow] = useState(true);
   // State for custom pixel offset for the InfoWindow
@@ -35,7 +37,7 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
 
   return (
     <section id="venue" className="py-12 sm:py-16 md:py-24">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-orbitron font-bold text-center mb-10 sm:mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nunito font-bold text-center mb-10 sm:mb-12 md:mb-20" style={{ color: 'hsl(var(--primary))' }}>
         Event Venue
       </h2>
       <Card className="bg-card shadow-xl rounded-xl overflow-hidden">
@@ -43,7 +45,11 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
           <div className="flex items-center space-x-3 sm:space-x-4 mb-3">
             <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
             <div>
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl font-orbitron text-card-foreground">{collegeName}</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl font-nunito text-card-foreground">
+                <a href={gmapsLink} target="_blank" rel="noopener noreferrer" className="hover:underline focus:outline-none focus:ring-2 focus:ring-ring rounded">
+                  {collegeName}
+                </a>
+              </CardTitle>
               <CardDescription className="text-sm sm:text-base md:text-lg text-muted-foreground">{address}</CardDescription>
             </div>
           </div>
