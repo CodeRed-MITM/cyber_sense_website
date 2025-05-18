@@ -31,7 +31,7 @@ const VenueMap: FC<VenueMapProps> = ({ collegeName, address, coordinates }) => {
           <div className="flex items-center space-x-3 sm:space-x-4 mb-3">
             <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
             <div>
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl font-orbitron text-primary-foreground">{collegeName}</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl font-orbitron text-card-foreground">{collegeName}</CardTitle>
               <CardDescription className="text-sm sm:text-base md:text-lg text-muted-foreground">{address}</CardDescription>
             </div>
           </div>
