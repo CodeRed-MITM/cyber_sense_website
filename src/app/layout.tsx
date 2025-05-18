@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Orbitron, Share_Tech_Mono } from 'next/font/google';
+import { Orbitron, Share_Tech_Mono, Press_Start_2P } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
@@ -17,13 +17,19 @@ const geistMono = Geist_Mono({
 const orbitron = Orbitron({
   variable: '--font-orbitron',
   subsets: ['latin'],
-  weights: ['400', '500', '600', '700', '800', '900'], // Orbitron supports various weights
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 const shareTechMono = Share_Tech_Mono({
   variable: '--font-share-tech-mono',
   subsets: ['latin'],
-  weight: ['400'], // Share Tech Mono typically has one weight
+  weight: ['400'],
+});
+
+const pressStart2P = Press_Start_2P({
+  variable: '--font-press-start-2p',
+  subsets: ['latin'],
+  weight: ['400'], // Press Start 2P typically has one weight
 });
 
 export const metadata: Metadata = {
@@ -38,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${shareTechMono.variable} antialiased bg-background text-foreground`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${shareTechMono.variable} ${pressStart2P.variable} antialiased bg-background text-foreground`}>
         {children}
         <Toaster />
       </body>

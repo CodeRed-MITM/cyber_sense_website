@@ -14,6 +14,7 @@ export default {
         mono: ['var(--font-geist-mono)'],
         orbitron: ['var(--font-orbitron)'],
         'share-tech-mono': ['var(--font-share-tech-mono)'],
+        'press-start-2p': ['var(--font-press-start-2p)'],
       },
   		colors: {
   			background: 'hsl(var(--background))',
