@@ -52,9 +52,7 @@ const PosterSection: FC<PosterSectionProps> = ({ posterGdriveLink }) => {
             onError={!hasError ? handleError : undefined} // Only attach onError if we haven't already errored to placeholder
           />
         </div>
-        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-          The event poster is displayed above. If you see a placeholder, ensure the image named <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">CyberSense Poster - Hosted by IOT & CB CodeRed.png</code> is in the <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">public</code> folder of your project. You can also view the poster on Google Drive using the link below.
-        </p>
+        {/* The descriptive text paragraph below has been removed */}
         <Button asChild variant="outline" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
           <Link href={posterGdriveLink} target="_blank" rel="noopener noreferrer">
             View Poster on Google Drive <ExternalLink className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
