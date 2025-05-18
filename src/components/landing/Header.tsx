@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundImageU
         quality={85}
         priority
         className="brightness-[0.4] transform scale-105" // Darken image more and slight zoom for depth
-        data-ai-hint="hacking digital security"
+        data-ai-hint="3d abstract blue"
       />
       <div className="relative z-10 p-4 sm:p-6 max-w-4xl">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-orbitron font-bold mb-4 tracking-tight" style={{ color: 'hsl(var(--primary))' }}>
@@ -30,7 +30,11 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundImageU
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl mb-3 font-light text-gray-200">{tagline}</p>
         <p className="text-md sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">{subtext}</p>
-        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
+        <Button 
+          asChild 
+          size="lg" 
+          className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+        >
            <Link href={registrationLink} target="_blank" rel="noopener noreferrer">
             Register Now
           </Link>
