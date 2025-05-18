@@ -21,7 +21,7 @@ export default function CyberSenseLandingPage() {
     {
       id: 's1',
       title: "Half and Half",
-      description: "Decrypt fragmented intel and piece together critical data from partially revealed clues. Precision is key.",
+      description: "Connect fragmented intel and match disparate clues. Decipher the data to reveal the complete picture. Speed and precision are vital.",
       iconName: "Puzzle"
     },
     {
@@ -39,7 +39,7 @@ export default function CyberSenseLandingPage() {
     {
       id: 's4',
       title: "Murder Mystery",
-      description: "Unravel a complex cybercrime. Analyze digital evidence, trace attack vectors, and identify the culprit.",
+      description: "A classic whodunit. Examine clues, interrogate virtual suspects, and deduce the culprit in this narrative-driven investigation.",
       iconName: "FileSearch"
     },
     {
@@ -69,7 +69,7 @@ export default function CyberSenseLandingPage() {
         registrationLink={eventDetails.registrationLink}
       />
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]"> {/* Pull content up slightly */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 mt-[-2.5rem] md:mt-[-3.5rem] lg:mt-[-8vh] mb-16 md:mb-24 relative z-[5]">
         <CompetitionStages stages={competitionStagesData} />
         <Separator className="my-12 md:my-16 bg-border/50" />
         <VenueMap
