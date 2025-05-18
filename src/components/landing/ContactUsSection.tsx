@@ -5,38 +5,47 @@ import { User, Phone, Mail } from 'lucide-react';
 
 interface Coordinator {
   name: string;
-  phone?: string; // Made optional
-  email?: string; // Made optional
+  title: string;
+  phone?: string;
+  email?: string;
 }
 
 const coordinators: Coordinator[] = [
   {
     name: "Punith Kumar",
+    title: "Event Organizer",
     phone: "+91 8861608621", 
     email: "punith.k@example.com" 
   },
   {
     name: "Sneha R",
+    title: "Event Organizer",
     phone: "+91 9900827056", 
     email: "sneha.r@example.com" 
   },
   {
     name: "Mohammed Muhaimin",
+    title: "Student Coordinator",
   },
   {
     name: "Yashvitha A",
+    title: "Student Coordinator",
   },
   {
     name: "Deekshitha",
+    title: "Student Coordinator",
   },
   {
     name: "Rithu Gowda",
+    title: "Student Coordinator",
   },
   {
     name: "Nishanth S",
+    title: "Student Coordinator",
   },
   {
     name: "Pancham Jain",
+    title: "Student Coordinator",
   }
 ];
 
@@ -54,7 +63,7 @@ const ContactUsSection: FC = () => {
                 <User className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
                 <CardTitle className="text-xl sm:text-2xl font-orbitron text-card-foreground">{coordinator.name}</CardTitle>
               </div>
-              <p className="text-sm text-muted-foreground ml-11 sm:ml-13">Student Coordinator</p>
+              <p className="text-sm text-muted-foreground ml-11 sm:ml-13">{coordinator.title}</p>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 pt-0 flex-grow">
               {coordinator.phone && (
@@ -88,4 +97,3 @@ const ContactUsSection: FC = () => {
 };
 
 export default ContactUsSection;
-
