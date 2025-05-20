@@ -33,7 +33,7 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: 'Cyber Sense Landing',
+  title: 'CYBER SENSE',
   description: 'Join Cyber Sense - an exciting cybersecurity competition event.',
 };
 

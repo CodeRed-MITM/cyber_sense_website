@@ -97,12 +97,23 @@ export default {
           '50%': {
             boxShadow: '0 0 25px 6px hsl(var(--accent) / 0.6)',
           },
-        }
+        },
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(-25%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
         'subtle-glow': 'subtle-glow 2.5s ease-in-out infinite alternate',
+        'bounce-slow': 'bounce 3s infinite',
   		}
   	}
   },

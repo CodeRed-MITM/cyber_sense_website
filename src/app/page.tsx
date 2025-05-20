@@ -11,8 +11,10 @@ import PosterSection from '@/components/landing/PosterSection';
 import ContactUsSection from '@/components/landing/ContactUsSection';
 import FAQSection from '@/components/landing/FAQSection';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function CyberSenseLandingPage() {
@@ -34,7 +36,8 @@ export default function CyberSenseLandingPage() {
     { text: "Eligibility: Open to all undergraduate students" },
     { text: "Electronic Gadgets: Not allowed during the event duration including mobiles, smartwatches, etc." },
     { text: "Prizes: Exciting cash prizes" },
-    { text: "Certificate: E-certificates will be provided to all participants" }
+    { text: "Certificate: E-certificates will be provided to all participants" },
+    { text: "Transportation: Bus service will be provided to all participants (refer to the bus route in the FAQ section)" }
   ];
 
   const competitionStagesData: StageInfo[] = [
@@ -96,6 +99,23 @@ export default function CyberSenseLandingPage() {
     {
       question: "Will food and refreshments be provided?",
       answer: "Lunch will be provided."
+    },
+    {
+      question: "How to avail bus facility?",
+      answer: (
+        <div className="space-y-4">
+          <p>Please go through the document of all bus routes and call the designated drivers for pickup details.</p>
+          <Button asChild>
+            <Link 
+              href="https://docs.google.com/spreadsheets/d/18smCrgg-x9BxS1BrwCscroQykvFKoQnW/edit?usp=sharing&ouid=112608980862314054903&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bus Routes
+            </Link>
+          </Button>
+        </div>
+      )
     }
   ];
 

@@ -15,6 +15,13 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoUrl, backgroundImageUrl, registrationLink }) => {
+  const handleScrollDown = () => {
+    const detailsSection = document.getElementById('details');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="relative h-screen flex items-center justify-center text-center text-white shadow-2xl overflow-hidden">
       {/* Background Effects */}
@@ -39,7 +46,7 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
         data-ai-hint="3d abstract blue"
       />
 
-      <div className="relative z-10 p-4 sm:p-6 max-w-6xl mx-auto pt-16 md:pt-20">
+      <div className="relative z-[2] flex flex-col items-center justify-center px-4">
         <p className="text-sm sm:text-base md:text-lg text-gray-400 mb-3 sm:mb-4 font-share-tech-mono uppercase tracking-wider">
           hosted by <span className="text-white">Code</span><span className="text-destructive">Red</span> Club
         </p>
@@ -64,6 +71,19 @@ const Header: FC<HeaderProps> = ({ eventName, tagline, subtext, backgroundVideoU
           </Link>
         </Button>
       </div>
+
+      {/* Scroll Down Arrow */}
+      <button 
+        onClick={handleScrollDown}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-[2] animate-bounce-slow cursor-pointer hover:scale-110 transition-transform duration-200"
+        aria-label="Scroll to next section"
+      >
+        <div className="relative w-8 h-12 sm:w-10 sm:h-14">
+          <div className="absolute inset-0 border-2 border-[#6495ED]/70 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-4 sm:w-1.5 sm:h-5 bg-[#6495ED]/80 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 sm:w-3 sm:h-3 border-b-2 border-r-2 border-[#6495ED]/90 rotate-45"></div>
+        </div>
+      </button>
     </header>
   );
 };
